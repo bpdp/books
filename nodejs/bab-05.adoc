@@ -1,0 +1,36 @@
+== Node.js dan Web: Teknik Pengembangan Aplikasi
+
+=== Pendahuluan
+
+Pada saat membangun aplikasi Cloud dengan antarmuka web menggunakan Node.js, ada beberapa teknik pemrograman yang bisa digunakan. Bab ini akan membahas berbagai teknik tersebut. Untuk mengerjakan beberapa latihan di bab ini, digunakan suatu file dengan format JSON. File _pegawai.json_ berikut ini akan digunakan dalam pembahasan selanjutnya.
+
+Jika ingin memeriksa validitas dari data berformat JSON, pemrogram bisa menggunakan validator di http://jsonlint.com.
+
+=== _Event-Driven Programming_ dan EventEmitter
+
+_Event-Driven Programming_ (selanjutnya akan disebut EDP) atau sering juga disebut _Event-Based Programming_ merupakan teknik pemrograman yang menggunakan _event_ atau suatu kejadian tertentu sebagai pemicu munculnya suatu aksi serta aliran program. Contoh event misalnya adalah sebagai berikut:
+
+- Menu dipilih.
+- Tombol ``Submit'' di klik.
+- Server menerima permintaan dari klien.
+
+Pada dasarnya ada beberapa bagian yang harus disiapkan dari paradigma dan teknik pemrograman ini:
+
+- _main loop_ atau suatu konstruksi utama program yang menunggu dan mengirimkan sinyal event.
+- definisi dari berbagai event yang mungkin muncul
+- definisi _event-handler_ untuk menangani event yang muncul dan dikirimkan oleh _main loop_
+
+Node.js merupakan peranti pengembangan yang menggunakan teknik pemrograman ini. Pada Node.js, EDP ini semua dikendalikan oleh kelas __events.EventEmitter__. Jika ingin menggunakan kelas ini, gunakan __require(’events’)__. Dalam terminologi Node.js, jika suatu event
+terjadi, maka dikatakan sebagai __emits an event__, sehingga yang digunakan untuk menangani itu disebut dengan events.EventEmitter. Pada dasarnya banyak event yang digunakan oleh berbagai kelas lain di Node.js. Contoh kecil dari penggunaan itu diantaranya adalah _net.Server_ yang meng-__emit__ event ``connection'', ``listening'', ``close'', dan ``error''.
+
+Untuk memahami mekanisme ini, pahami dua kode sumber berikut:
+
+- server.js: mengaktifkan server http (diambil dari manual Node.js)
+- server-on-error.js: mencoba mengaktifkan server pada host dan port yang sama dengan server.js. Aktivasi ini akan menyebabkan Node.js meng-__emit__ event ’error’ karena host dan port sudah digunakan di server.js.
+
+File server.js dijalankan lebih dulu, setelah itu baru menjalankan server-on-error.js.
+
+=== Asynchronous / Non-blocking IO dan _Callback_
+
+_Asynchronous input/output_ merupakan suatu bentuk pemrosesan masukan/keluaran yang memungkinkan pemrosesan dilanjutkan tanpa menunggu proses tersebut selesai. Saat pemrosesan masukan/keluaran tersebut selesai, hasil akan diberikan ke suatu fungsi. Fungsi yang menangania hasil pemrosesan saat pemrosesan tersebut selesai disebut _callback_ (pemanggilan kembali). Jadi, mekanismenya adalah: proses masukan/keluaran - lanjut ke alur berikutnya - panggil kembali fungsi pemroses jika proses masukan/keluaran sudah selesai.
+

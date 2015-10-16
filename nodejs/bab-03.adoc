@@ -1,0 +1,42 @@
+== Paradigma Pemrograman di JavaScript
+
+=== Pemrograman Fungsional
+
+Pemrograman fungsional, atau sering disebut __functional programming__, selama ini lebih sering dibicarakan di level para akademisi. Meskipun demikian, saat ini terdapat kecenderungan paradigma ini semakin banyak digunakan di industri. Contoh nyata dari implementasi paradigma ini di industri antara lain adalah Scala (http://www.scala-lang.org), OCaml (http://www.ocaml.org), Haskell (http://www.haskell.org), Microsoft F# (http://fsharp.org), dan lain-lain. Dalam konteks paradigma pemrograman, peranti lunak yang dibangun menggunakan pendekatan paradigma ini akan terdiri atas berbagai fungsi yang mirip dengan fungsi matematis. Fungsi matematis tersebut di-evaluasi dengan penekanan pada penghindarana _state_ serta __mutable data__. Bandingkan dengan paradigma pemrograman prosedural yang menekankan pada _immutable data_ dan definisi berbagai prosedur dan fungsi untuk mengubah _state_ serta data.
+
+JavaScript bukan merupakan bahasa pemrograman fungsional yang murni, tetapi ada banyak fitur dari pemrograman fungsional yang terdapat dalam JavaScript. Dalam hal ini, JavaScript banyak dipengaruhi oleh bahasa pemrograman Scheme (http://www.schemers.org/). Bab ini akan membahas beberapa fitur pemrograman fungsional di JavaScript. Pembahasan ini didasari pembahasan di bab sebelumnya tentang Fungsi di JavaScript.
+
+==== Ekspresi Lambda
+
+Ekspresi lambda / _lambda expression_ merupakan hasil karya dari ALonzo Church sekitar tahun 1930-an. Aplikasi dari konsep ini di dalam pemrograman adalah penggunaan fungsi sebagai parameter untuk suatu fungsi. Dalam pemrograman, _lambda function_ sering juga disebut sebagai fungsi anonimus (fungsi yang dipanggil/dieksekusi tanpa ditautkan (__bound__) ke suatu __identifier__). Berikut adalah implementasi dari konsep ini di JavaSCript:
+
+==== Higher-order Function
+
+_Higher-order function_ (sering disebut juga sebagai _functor_ adalah suatu fungsi yang setidak-tidaknya menggunakan satu atau lebih fungsi lain sebagai parameter dari fungsi, atau menghasilkan fungsi sebagai nilai kembalian.
+
+==== Closure
+
+Suatu _closure_ merupakan definisi suatu fungsi bersama-sama dengan lingkungannya. Lingkungan tersebut terdiri atas fungsi internal serta berbagai variabel lokal yang masih tetap tersedia saat fungsi utama / closure tersebut selesai dieksekusi.
+
+==== Currying
+
+_Currying_ memungkinkan pemrogram untuk membuat suatu fungsi dengan cara menggunakan fungsi yang sudah tersedia secara parsial, artinya tidak perlu menggunakan semua argumen dari fungsi yang sudah tersediaa tersebut.
+
+=== Pemrograman Berorientasi Obyek
+
+==== Pengertian
+
+Pemrograman Berorientasi Obyek (selanjutnya akan disingkat PBO) adalah suatu paradigma pemrograman yang memandang bahwa pemecahan masalah pemrograman akan dilakukan melalui definisi berbagai kelas kemudian membuat berbagai obyek berdasarkan kelas yng dibuat tersebut dan setelah itu mendefinisikan interaksi antar obyek tersebut dalam memecahkan masalah pemrograman. Obyek bisa saling berinteraksi karena setiap obyek mempunyai properti (sifat / karakteristik) dan _method_ untuk mengerjakan suatu pekerjaan tertentu. Jadi, bisa dikatakan bahwa paradigma ini menggunakan cara pandang yang manusiawi dalam penyelesaian masalah.
+
+Dengan demikian, inti dari PBO sebenarnya terletak pada kemampuan untuk mengabstraksikan berbagai obyek ke dalam kelas (yang terdiri atas properti serta method). Paradigma PBO biasanya juga mencakup _inheritance_ atau pewarisan (sehingga terbentuk skema yang terdiri atas _superclass_ dan __subclass__). Ciri lainnya adalah _polymorphism_ dan _encapsulation_ / pengkapsulan.
+
+JavaScript adalah bahasa pemrograman yang mendukung PBO dan merupakan implementasi dari ECMAScript. Implementasi PBO di JavaScript adalah _prototype-based programming_ yang merupakan salah satu subset dari PBO. Pada __prototype-based programming__, kelas / _class_ tidak ada. Pewarisan diimplementasikan melalui __prototype__.
+
+==== Definisi Obyek
+
+Definisi obyek dilakukan dengan menggunakan definisi __function__, sementara _this_ digunakan di dalam definisi untuk menunjukkan ke obyek tersebut. Sementara itu, Kelas.prototype.namaMethod digunakan untuk mendefinisikan method dengan nama method namaMethod pada kelas Kelas. Perhatikan contoh pada listing berikut.
+
+==== _Inheritance_ / Pewarisan
+
+Pewarisan di JavaScript bisa dicapai menggunakan __prototype__. Listing program berikut memperlihatkan bagaimana pewarisan diimplementasikan di JavaScript.
+

@@ -1,0 +1,48 @@
+== Mengelola Paket Menggunakan npm
+
+=== Apakah npm Itu?
+
+Node.js memungkinkan developer untuk mengembangkan aplikasi secara modular dengan memisahkan berbagai komponen _reusable code_ ke dalam pustaka (__library__). Berbagai pustaka tersebut bisa diperoleh di http://npmjs.org. Node.js menyediakan perintah _npm_ untuk mengelola paket pustaka di repositori tersebut. Untuk menggunakan utilitas ini,pemrogram harus terkoneksi dengan Internet.
+
+=== Menggunakan npm
+
+Saat melakukan instalasi Node.js, secara otomatis _npm_ akan disertakan. Dengan perintah _npm_ tersebut, seorang pemrogram bisa mengelola pustaka yang tersedia di repositori. Jika pemrogram mempunya pustakan yang bisa digunakan oleh orang lain, maka pemrogram yang bersangkutan juga bisa menyimpan pustaka tersebut ke dalam repositori sehingga memungkinkan untuk diinstall oleh pemrogram-pemrogram lain di seluruh dunia. Sintaksis lengkap dari penggunaan perintah _npm_ ini adalah sebagai berikutfootnote:[beberapa bagian tertulis spesifik lokasi direktori di komputer yang digunakan penulis]:
+
+Pada bagian berikut, kita akan membahas lebih lanjut penggunaan perintah _npm_ tersebut.
+
+==== Instalasi Paket
+
+npm sebenarnya bukan merupakan singkatan dari __Node Package Manager__, meskipun seringkali orang menterjemahkan dengan singkatan tersebut dan npm seharusnya ditulis dalam huruf kecil semua seperti yang dijelaskan pada FAQ (__Frequently Asked Questions__)footnote:[https://npmjs.org/doc/faq.html]. npm merupakan bilah alat berbasis baris perintah, dijalankan melalui shell atau __command prompt__. Sama seperti kebanyakan bilah alat berbasis baris perintah lain, npm memiliki struktur perintah __npm perintah argumen__. Installasi paket pustaka dilakukan dengan perintah berikut: 
+
+Perintah diatas akan memasang versi terakhir dari paket ``namapaket''. Selain itu _npm_ juga dapat memasang paket langsung pada sebuah folder, tarball atau tautan untuk sebuah tarball.
+
+==== Struktur Instalasi Paket Node.js
+
+Dalam installasi paket pustaka, berkas-berkas akan terletak dalam folder lokal aplikasi __node_modules__. Pada mode installasi paket pustaka global (dengan -g atau –global dibelakang baris perintah), paket pustaka akan dipasang pada _/usr/lib/node_modules_ (dengan lokasi installasi Node.js standar). Mode global memungkinkan paket pustaka digunakan tanpa memasang paket pustaka pada setiap folder lokal aplikasi. Mode global ini juga membutuhkan hak administrasi lebih (sudo atau root) dari pengguna agar dapat menulis pada lokasi standar.
+
+Jika berada pada direktori $HOME, maka paket-paket npm tersebut akan terinstall di $HOME/.npm, sedangkan jika kita berada di luar direktori $HOME, maka paket-paket tersebut akan terinstall di $CWD/node_modules ($CWD = _Current Working Directory_ - direktori aktif saat ini). Daftar paket pustaka yang terpasang dapat dilihat menggunakan perintah berikut:
+
+Selain melihat daftar paket pustaka yang digunakan dalam aplikasi maupun global, perintah diatas juga akan menampilkan paket dependensi dalam struktur pohon. Jika kita belum menginstall paket-paket yang diperlukan, akan muncul peringatan. Berikut ini adalah contoh peringatan dari paket-paket yang belum terinstall di aplikasi hello-express saat mengerjakan perintah ``npm ls'' di direktori tempat aplikasi tersebut berada (lihat bab 1):
+
+Jika sudah terinstall, perintah ``npm ls'' akan menampilkan struktur dari paket yang telah terinstall dalam bentuk struktur pohon seperti pada Gambar [fig:npm-ls-paket-terinstall].
+
+image:images/npm-ls-paket-terinstall.jpg[Tampilan ``npm ls'' pada direktori proyek dengan paket terinstall lengkap]
+
+==== Menghapus Paket / _Uninstall_
+
+Menghapus paket pustaka menggunakan npm pada dasarnya hampir sama dengan saat memasang paket, namun dengan perintah __uninstall__. Berikut perintah lengkapnya.
+
+==== Mencari Paket
+
+Untuk mencari paket, gunakan argumen _search_ dan nama atau bagian dari nama paket yang dicari. Contoh berikut ini akan mencari paket dengan kata kunci ’sha512’ (tampilan berikut merupakan tampilan yang terpotong):
+
+Setelah menemukan paketnya, pemrogram bisa menginstall langsung ataupun melihat informasi lebih lanjut tentang pustakan tersebut.
+
+==== Menampilkan Informasi Paket
+
+Setelah mengetahui nama paket, pemrogram bisa memperoleh informasi lebih lanjut dalam format JSON menggunakan parameter __view__. Contoh dibawah ini menampilkan rincian dalam format JSON dari paket __arango.client__: 
+
+==== Memperbaharui Paket
+
+Jika terdapat versi baru, kita bisa memperbaharui secara otomatis menggunakan argumen _update_ berikut ini:
+

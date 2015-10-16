@@ -1,0 +1,58 @@
+== Pengenalan Cloud Computing dan Infrastruktur Pengembangan Aplikasi Berbasis Node.js
+
+=== Apa itu Cloud Computing?
+
+Cloud Computing, atau sering diterjemahkan sebagai ``Komputasi Awan'' dalam bahasa Indonesia mempunyai berbagai definisi:
+
+* **Wikipedia**: penggunaan sumber daya komputasi (peranti keras dan peranti lunak) yang berfungsi untuk memberikan layanan melalui suatu jaringan (pada umumnya Internet)footnote:[http://en.wikipedia.org/wiki/Cloud_computing].
+* **NISTfootnote:[The National Institute of Standards and Technology]**: model yang memungkinkan akses jaringan ubiquitous (dari mana saja), nyaman, on-demand (saat ada permintaan) ke sekumpulan sumber daya komputasi yang dikonfigurasi untuk berbagi (jaringan, server, penyimpanan, dan berbagai layanan lain) yang dapat dengan cepat ditetapkan dan dirilis dengan usaha yang minimal dari manajemen ataupun interaksi dengan penyedia layananfootnote:[http://csrc.nist.gov/publications/PubsSPs.html#800-145].
+
+[[ccmodel]]
+image:gambar/662px-Cloud_computing.png[Model Cloud Computing]
+
+Jika diwujudkan secara visual, Cloud Computing bisa dilihat pada
+<<ccmodel>>footnote:[Gambar dibuat oleh Sam Johnston, diambil dari http://en.wikipedia.org/w/index.php?title=File:Cloud_computing.svg&page=1]
+
+=== Karakteristik Cloud Computing
+
+Menurut NIST, ada beberapa karakteristik dari Cloud Computing:
+
+* **On-demand self-service**: layanan bisa diperoleh pada saat diminta, tanpa intervensi atau interaksi manusia di sisi penyedia jasa.
+* **Broad network access**: tersedia melalui jaringan dengan berbagai peranti yang umum (komputer, tablet, HP, dan lain-lain)
+* **Resource pooling**: sumber daya komputasi dari penyedia jasa terkumpul untuk melayani.
+* **Rapid elasticity**: skalabilitas.
+* **Measured service**: penggunaan sumber daya bisa diukur, di-monitor, dikendalikan, dan dilaporkan.
+
+Karakteristik lain yang tidak kalah penting adalah __multitenancy__. _Multitenancy_ merupakan suatu prinsip dalam arsitektur software. Pada arsitektur tersebut, satu instan dari software berjalan pada server, melayani banyak organisasi klien. Aplikasi dirancang untuk mempartisi data dan konfigurasinya secara virtual dan setiap organisasi klien tersebut bekerja dengan instan aplikasi virtual tersebutfootnote:[http://en.wikipedia.org/wiki/Multitenancy].
+
+=== _Public_ dan _Private_ Cloud Computing
+
+Cloud Computing bisa dibangun untuk keperluan pribadi suatu organisasi dan (secara legal) hanya bisa diakses oleh organisasi yang bersangkutan. Tipe tersebut dikenal dengan __Private Cloud Computing__. Sementara itu, jika sumber daya Cloud Computing bisa diakses oleh publik (dengan hak akses yang sesuai), maka model tersebut dikenal sebagai __Public Cloud Computing__. Pembahasan di buku ini adalah pembahasan tentang _Public Cloud Computing_ dan semua referensi tentang Cloud Computing di buku ini akan menunjuk pada _Public Cloud Computing_ kecuali dinyatakan lain.
+
+=== Model Layanan Cloud Computing
+
+Model layanan pada Cloud Computing akan berkembang sesuai kebutuhan konsumen serta inovasi dari berbagai penyedia layanan. Saat ini, pada umumnya, ada tiga model layanan:
+
+* *SaaS* (__Software as a Service__): layanan berupa aplikasi yang ditempatkan pada infrastruktur penyedia layanan, siap digunakan oleh konsumen.
+* *PaaS* (__Platform as a Service__): menyediakan layanan ke konsumen berupa platform untuk men-deploy aplikasi.
+* *IaaS* (__Infrastructure as a Service__): menyediakan layanan ke konsumen berupa berbagai sumber daya komputasi (pemrosesam, penyimpanan, jaringan, dan sumber daya fundamental lainnya).
+
+Meski sampai saat ini, umumnya terdapat tiga model tersebut, beberapa model kelihatannya sudah mulai muncul, misalnya STaaS (__Storage as a Service__), SECaaS (__Security as a Service__), DaaS (__Data as a Service__), TEaaS (__Test Environment as a Service__), __Desktop Virtualization__, APIaaS (__API as a Service__).
+
+=== Pengembangan Aplikasi di Cloud Computing
+
+Pada umumnya, para pengembang aplikasi di Cloud Computing juga menggunakan pendekatan _Agile Software Development_ yang berbasis pada pengembangan secara iteratif untuk setiap _milestone_ (dalam iterasi analisis-desain-__coding-testing-debugging__) mulai dari _milestone_ paling awal sampai software dirilis. Perbedaan paling mendasar hanyalah pada platform yang digunakan untuk __deployment__, peranti pengembangan yang digunakan, serta utilitas untuk mengelola aplikasi yang di-__deploy__ pada instan di cloud.
+
+Pengembangan aplikasi di Cloud Computing akan melibatkan peranti pengembang yang didukung oleh infrastruktur Cloud. Kita akan memerlukan PaaS untuk keperluan ini. Pada dasarnya pengembangan aplikasi akan meliputi siklus berikut:
+
+* _Coding_
+* Test di komputer lokal
+* Upload ke server (dalam Cloud Computing, proses ini diistilahkan dengan ``__push__''
+* Edit - push
+
+Jika pengembangan aplikasi dilakukan oleh tim, maka perlu adanya software untuk __version control__, misalnya Git, mercurial, dan lain-lain. Setelah itu, aktivitas yang dilakukan biasanya terpusat pada _push_ (untuk mengupload instan dari aplikasi ke server) dan _pull_ (untuk mengambil instan aplikasi dari server).
+
+=== Node.js dan Cloud Computing
+
+Node.js merupakan salah satu peranti pengembang yang bisa digunakan untuk membuat aplikasi berbasis Cloud. Node.js dikembangkan dari _engine_ JavaScript yang dibuat oleh Google untuk browser _Chrome / Chromium_ (V8) ditambah dengan libUV serta beberapa pustaka internal lainnya. Dengan menggunakan Node.js, semua pengembangan akan dilakukan menggunakan JavaScript, baik pada sisi klien maupun server. Node.js dibuat pertama kali oleh Ryan Dahl (twitter.com/ryah) dan sampai saat ini dikembangkan oleh komunitas sebagai software bebas dengan pendanaa utama dari Joyent, perusahaan tempat Ryan Dahl bekerja.
+

@@ -1,0 +1,9 @@
+$ node
+> console.log("Selamat datang di Node.js")
+Selamat datang di Node.js
+undefined
+> .save /home/bpdp/kerjaan/src/javascript/nodejs/welcome.js
+Session saved to:/home/bpdp/kerjaan/src/javascript/nodejs/welcome.js
+> $ cat /home/bpdp/kerjaan/src/javascript/nodejs/welcome.js 
+console.log("Selamat datang di Node.js")
+$
