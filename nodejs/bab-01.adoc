@@ -2,9 +2,12 @@
 
 === Apa itu Cloud Computing?
 
-Cloud Computing, atau sering diterjemahkan sebagai ``Komputasi Awan'' dalam bahasa Indonesia mempunyai berbagai definisi:
+**Cloud Computing**, atau sering diterjemahkan sebagai **Komputasi
+Awan** dalam bahasa Indonesia mempunyai berbagai definisi:
 
-* **Wikipedia**: penggunaan sumber daya komputasi (peranti keras dan peranti lunak) yang berfungsi untuk memberikan layanan melalui suatu jaringan (pada umumnya Internet)footnote:[http://en.wikipedia.org/wiki/Cloud_computing].
+* **Wikipedia**: penggunaan sumber daya komputasi (peranti keras dan
+  peranti lunak) yang berfungsi untuk memberikan layanan melalui suatu
+  jaringan (pada umumnya Internet).footnote:[http://en.wikipedia.org/wiki/Cloud_computing].
 * **NISTfootnote:[The National Institute of Standards and Technology]**: model yang memungkinkan akses jaringan ubiquitous (dari mana saja), nyaman, on-demand (saat ada permintaan) ke sekumpulan sumber daya komputasi yang dikonfigurasi untuk berbagi (jaringan, server, penyimpanan, dan berbagai layanan lain) yang dapat dengan cepat ditetapkan dan dirilis dengan usaha yang minimal dari manajemen ataupun interaksi dengan penyedia layananfootnote:[http://csrc.nist.gov/publications/PubsSPs.html#800-145].
 
 [[ccmodel]]

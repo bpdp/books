@@ -49,6 +49,8 @@ Perintah untuk memberi masukan di Node.js sudah tersedia pada pustaka API _Readl
 
 Implementasi dari pola diatas bisa dilihat pada kode sumber berikut ini (diambil dari manual Node.js):
 
+[source,javascript]
+.readline.js
 ----
 include::kode/bab-02/readline.js[]
 ----

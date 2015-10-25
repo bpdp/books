@@ -1,49 +1,68 @@
 = Pengembangan Aplikasi Cloud Computing Menggunakan Node.js
 Bambang Purnomosidi D. P. <a.out@bpdp.xyz>
 v1.0, 2015-10
-:doctype: book
-:Author Initials: bpdp
-:website: http://bpdp.xyz
+:toc:
+:homepage: http://bpdp.xyz
+:source-highlighter: coderay
 
+[abstract]
 image:./gambar/logo-light.png[Node.js logo]
 
-[dedication]
-Buku ini saya dedikasikan untuk keluarga saya dan guru-guru saya (anda mungkin salah satu diantaranya!)
-
-[preface]
-Buku bebas dengan lisensi CC-BY-SA
-http://wiki.creativecommons.org/Licenses/by-sa/3.0LegalText_(Indonesian)[CC-BY-SA]  ini merupakan buku yang dirancang untuk keperluan memberikan pengetahuan mendasar pengembangan aplikasi berbasis Cloud Computing, khususnya menggunakan Node.js. Pada buku ini akan dibahas penggunaan Node.js untuk mengembangkan aplikasi SaaS (__Software as a Service__). Node.js merupakan software di sisi server yang dikembangkan dari _engine_ JavaScript V8 dari Google serta *libuv* (https://github.com/joyent/libuv)footnote:[Versi sebelum 0.9.0
-menggunakan *libev* dari Mark Lechmann].
+Buku ini saya dedikasikan untuk keluarga saya dan guru-guru saya (anda
+mungkin salah satu diantaranya!). Buku bebas dengan lisensi
+http://wiki.creativecommons.org/Licenses/by-sa/3.0LegalText_(Indonesian)[CC-BY-SA]
+ini merupakan buku yang dirancang untuk keperluan memberikan
+pengetahuan mendasar tentang pengembangan aplikasi berbasis Cloud
+Computing, khususnya menggunakan http://nodejs.org[Node.js]. Pada buku
+ini akan dibahas penggunaan Node.js untuk mengembangkan aplikasi SaaS
+(_Software as a Service_). Node.js merupakan software di sisi server
+yang dikembangkan dari _engine_ JavaScript V8 dari Google serta
+https://github.com/joyent/libuv[libuv]. Versi sebelum 0.9.0
+menggunakan _libev_ dari Mark Lechmann.
 
 Jika selama ini kebanyakan orang mengenal JavaScript hanya di sisi klien (browser), dengan Node.js ini, pemrogram bisa menggunakan JavaScript di sisi server. Meskipun ini bukan hal baru, tetapi paradigma pemrograman yang dibawa oleh Node.js dengan _evented - asynchronous I/O_ menarik dalam pengembangan aplikasi Web (selain kita hanya perlu menggunakan 1 bahasa yang sama di sisi server maupun di sisi klien).
 
 Untuk mengikuti materi yang ada pada buku ini, pembaca diharapkan menyiapkan peranti komputer dengan beberapa software berikut terpasang:
-- Sistem operasi Linux (distribusi apa saja) - lihat di
-  http://www.distrowatch.com[DistroWatch]. Sistem operasi Linux ini bukan keharusan, anda bisa menggunakan Windows tetapi silahkan membuat penyesuaian-penyesuaian sendiri yang diperlukan. Kirimi saya _pull request_ jika anda menuliskan pengalaman anda di Windows! 
-- Git (untuk __version control system__) - bisa diperoleh di http://git-scm.com. Saya menggunakan versi 1.8.2.2.
-- mongoDB (basis data NOSQL) - bisa diperoleh di http://www.mongodb.org, saya menggunakan versi 2.4.4-pre-
-- Vim (untuk mengedit source code) - bisa diperoleh di http://www.vim.org. Jika tidak terbiasa menggunakan Vim, bisa menggunakan editor teks lainnya (atau IDE), misalnya gedit (ada di GNOME), geany (http://geany.org), KATE (ada di KDE), dan lain-lain.
 
-Software utama untuk keperluan workshop ini yaitu Node.js serta command line tools dari provider Cloud Computing (materi ini menggunakan fasilitas dari CloudFoundry), akan dibahas pada pada bab-bab tertentu. Materi akan lebih banyak berorientasi ke command line / shell sehingga para pembaca sebaiknya sudah memahami cara-cara menggunakan shell di Linux. Anda bisa menggunakan shell apa saja (bash, tcsh, zsh, ksh, dan lain-lain), saya menggunakan bash 4.2.45(2)-release.
+* Sistem operasi Linux (distribusi apa saja) - lihat di http://www.distrowatch.com[DistroWatch]. Sistem operasi Linux ini bukan keharusan, anda bisa menggunakan Windows tetapi silahkan membuat penyesuaian-penyesuaian sendiri yang diperlukan. Kirimi saya _pull request_ jika anda menuliskan pengalaman anda di Windows! 
+* Git (untuk _version control system_) - bisa diperoleh di http://git-scm.com.
+* mongoDB (basis data NOSQL) - bisa diperoleh di http://www.mongodb.org
+* Vim (untuk mengedit source code) - bisa diperoleh di http://www.vim.org. Jika tidak terbiasa menggunakan Vim, bisa menggunakan editor teks lainnya (atau IDE), misalnya gedit (ada di GNOME), geany (http://geany.org), KATE (ada di KDE), dan lain-lain.
+
+Software utama untuk keperluan workshop ini yaitu Node.js serta
+command line tools dari provider Cloud Computing (materi ini
+menggunakan fasilitas dari Heroku), akan dibahas pada pada bab-bab
+tertentu. Materi akan lebih banyak berorientasi ke command line /
+shell sehingga para pembaca sebaiknya sudah memahami cara-cara
+menggunakan shell di Linux. Anda bisa menggunakan shell apa saja
+(bash, tcsh, zsh, ksh, dan lain-lain).
 
 Have fun!
 
+<<<
 include::bab-01.adoc[]
 
+<<<
 include::bab-02.adoc[]
 
+<<<
 include::bab-03.adoc[]
 
+<<<
 include::bab-04.adoc[]
 
+<<<
 include::bab-05.adoc[]
 
+<<<
 include::bab-06.adoc[]
 
+<<<
 include::bab-07.adoc[]
 
+<<<
 include::bab-08.adoc[]
 
-Anonim, __Mozilla Developer Network - JavaScript__, https://developer.mozilla.org/en-US/docs/JavaScript. Cody Lindley, __JavaScript Enlightenment__, http://javascriptenlightenment.com, 2012. David Flanagan, __JavaScript: The Definitive Guide__, 4th Edition, O’Reilly, 2001. Don Nguyen, __Jump Start Node.js__, SitePoint, 2012. Douglas Crockford, __JavaScript: The Good Parts__, O’Reilly, 2008. Marijn Haverbeke, __Eloquent JavaScript: A Modern Introduction to Programming__, No Starch Press, 2011. Shelley Powers, __Learning Node__,
-O’Reilly, 2012. Tom Hughes-Croucher, Mike Wilson, __Node: Up and
-Running__, O’Reilly, 2012.
+<<<
+include::bibliography.adoc[]
+
