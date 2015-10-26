@@ -8,34 +8,103 @@ REPL adalah lingkungan pemrograman interaktif, tempat developer bisa mengetikkan
 
 Untuk mengaktifkan REPL dari Node.js, _executable command line program_-nya adalah *node* (atau *nodejs* pada beberapa sistem operasi, misalnya Ubuntu Linux). Jika *node* dipanggil dengan argumen nama file JavaScript, maka file JavaScript tersebut akan dieksekusi, sementara jika tanpa argumen, akan masuk ke REPL:
 
+----
+$ node
+>
+----
+
 Tanda *>* adalah tanda bahwa REPL Node.js siap untuk menerima perintah. Untuk melihat perintah-perintah REPL, bisa digunakan *.help*.
+
+----
+> .help
+break	Sometimes you get stuck, this gets you out
+clear	Alias for .break
+exit	Exit the repl
+help	Show repl options
+load	Load JS from a file into the REPL session
+save	Save all evaluated commands in this REPL session to a file
+> 
+----
+
+Untuk keluar dari mode REPL, tekan *Ctrl-D* sekali atau *Ctrl-C* dua
+kali.
+
+----
+$ node
+> 
+(^C again to quit)
+> 
+----
 
 ==== Perintah-perintah REPL
 
 Pada sesi REPL, kita bisa memberikan perintah internal REPL maupun perintah-perintah lain yang sesuai dan dikenali sebagai perintah JavaScript. Perintah internal REPL Node.js terdiri atas:
 
-* .break: keluar dan melepaskan diri dari "keruwetan" baris perintah di REPL.
-* .clear: alias untuk .break
-* .exit: keluar dari sesi REPL (bisa juga dengan menggunakan Ctrl-D)
-* .help: menampilkan pertolong perintah internal REPL
-* .load: membaca dan mengeksekusi perintah-perintah JavaScript yang terdapat pada suatu file.
-* .save: menyimpan sesi REPL ke dalam suatu file.
+* *.break*: keluar dan melepaskan diri dari "keruwetan" baris perintah di REPL.
+* *.clear*: alias untuk .break
+* *.exit*: keluar dari sesi REPL (bisa juga dengan menggunakan Ctrl-D)
+* *.help*: menampilkan pertolong perintah internal REPL
+* *.load*: membaca dan mengeksekusi perintah-perintah JavaScript yang terdapat pada suatu file.
+* *.save*: menyimpan sesi REPL ke dalam suatu file.
 
 Contoh untuk *.load*:
 
-Setelah keluar dari sesi REPL, maka port akan ditutup dan hasil eksekusi di atas akan dibatalkan.
+[source,javascript]
+----
+$ node
+> .load /home/bpdp/kerjaan/src/javascript/nodejs/hello.js
+> var http = require('http');
+undefined
+> http.createServer(function (req, res) {
+...   res.writeHead(200, {'Content-Type': 'text/plain'});
+...   res.end('Hello World\n');
+... }).listen(1337, '127.0.0.1');
+{ domain: null,
+  _events: 
+   { request: [Function],
+     connection: [Function: connectionListener],
+     clientError: [Function] },
+  _maxListeners: 10,
+  _connections: 0,
+  connections: [Getter/Setter],
+  _handle: null,
+  _usingSlaves: false,
+  _slaves: [],
+  allowHalfOpen: true,
+  httpAllowHalfOpen: false,
+  timeout: 120000 }
+> console.log('Server running at http://127.0.0.1:1337/');
+Server running at http://127.0.0.1:1337/
+undefined
+> 
+----
 
-Untuk menyimpan hasil sesi REPL menggunakan *.save*, jika tanpa menyebutkan direktori, maka akan disimpan di direktori aktif saat itu. Contoh:
+Setelah keluar dari sesi REPL, maka port akan ditutup dan hasil eksekusi di atas akan dibatalkan. Untuk menyimpan hasil sesi REPL menggunakan *.save*, jika tanpa menyebutkan direktori, maka akan disimpan di direktori aktif saat itu. Contoh:
+
+[source, javascript]
+----
+$ node
+> console.log("Selamat datang di Node.js")
+Selamat datang di Node.js
+undefined
+> .save /home/bpdp/kerjaan/src/javascript/nodejs/welcome.js
+Session saved to:/home/bpdp/kerjaan/src/javascript/nodejs/welcome.js
+> exit
+$ cat /home/bpdp/kerjaan/src/javascript/nodejs/welcome.js 
+console.log("Selamat datang di Node.js")
+$
+----
 
 === Dasar-dasar JavaScript di Node.js
 
 Node.js merupakan sistem peranti lunak yang merupakan implementasi dari bahasa pemrograman JavaScript. Spesifikasi JavaScript yang diimplementasikan merupakan spesifikasi resmi dari ECMAScript serta CommonJS (http://commonjs.org). Dengan demikian, jika anda sudah pernah mempelajari JavaScript sebelumnya, tata bahasa dari perintah yang dipahami oleh Node.js masih tetap sama dengan JavaScript.
 
-==== Membaca _Masukan_ dari Stream / Masukan Standar (stdin)
+==== Membaca Masukan dari _Stream_ / Masukan Standar (stdin)
 
 Untuk lebih memahami dasar-dasar JavaScript serta penerapannya di Node.js, seringkali kita perlu melakukan simulasi pertanyaan - proses - keluaran jawaban. Proses akan kita pelajari seiring dengan materi-materi berikutnya, sementara untuk keluaran, kita bisa menggunakan *console.log*. Bagian ini akan menjelaskan sedikit tentang masukan.
 
-Perintah untuk memberi masukan di Node.js sudah tersedia pada pustaka API _Readline_footnote:[Lengkapnya bisa diakses di http://nodejs.org/api/readline.html]. Pola dari masukan ini adalah sebagai berikut:
+Perintah untuk memberi masukan di Node.js sudah tersedia pada pustaka
+API http://www.nodejs.org/api/readline.html[Readline]. Pola dari masukan ini adalah sebagai berikut:
 
 * me-_require_ pustaka Readline
 * membuat _interface_ untuk masukan dan keluaran
@@ -55,7 +124,10 @@ Implementasi dari pola diatas bisa dilihat pada kode sumber berikut ini (diambil
 include::kode/bab-02/readline.js[]
 ----
 
-NOTES: _function(answer)_ pada listing di atas merupakan _anonymous function_ atau fungsi anonimus (sering juga disebut _lambda function_ / fungsi lambda. Posisi fungsi pada listing tersebut disebut dengan fungsi __callback__. Untuk keperluan pembahasan saat ini, untuk sementara yang perlu dipahami adalah hasil input akan dimasukkan ke _answer_ untuk diproses lebih lanjut. Fungsi dan _callback_ akan dibahas lebih lanjut pada pembahasan berikutnya.
+[NOTE]
+====
+_function(answer)_ pada listing di atas merupakan _anonymous function_ atau fungsi anonimus (sering juga disebut _lambda function_ / fungsi lambda. Posisi fungsi pada listing tersebut disebut dengan fungsi __callback__. Untuk keperluan pembahasan saat ini, untuk sementara yang perlu dipahami adalah hasil input akan dimasukkan ke _answer_ untuk diproses lebih lanjut. Fungsi dan _callback_ akan dibahas lebih lanjut pada pembahasan berikutnya.
+====
 
 ==== Nilai/Value dan Tipe Data
 

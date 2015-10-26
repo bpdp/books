@@ -1,0 +1,2 @@
+WARNING:  You don't have /home/bpdp/.gem/ruby/2.0.0/bin in your PATH,
+    gem executables will not run.
