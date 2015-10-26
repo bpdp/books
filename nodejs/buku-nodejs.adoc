@@ -1,6 +1,7 @@
 = Pengembangan Aplikasi Cloud Computing Menggunakan Node.js
 Bambang Purnomosidi D. P. <a.out@bpdp.xyz>
 v1.0, 2015-10
+:icons: font
 :toc:
 :homepage: http://bpdp.xyz
 :source-highlighter: coderay

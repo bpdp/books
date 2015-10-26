@@ -126,7 +126,7 @@ include::kode/bab-02/readline.js[]
 
 [NOTE]
 ====
-_function(answer)_ pada listing di atas merupakan _anonymous function_ atau fungsi anonimus (sering juga disebut _lambda function_ / fungsi lambda. Posisi fungsi pada listing tersebut disebut dengan fungsi __callback__. Untuk keperluan pembahasan saat ini, untuk sementara yang perlu dipahami adalah hasil input akan dimasukkan ke _answer_ untuk diproses lebih lanjut. Fungsi dan _callback_ akan dibahas lebih lanjut pada pembahasan berikutnya.
+_function(answer)_ pada listing di atas merupakan _anonymous function_ atau fungsi anonimus (sering juga disebut _lambda function_ / fungsi lambda. Posisi fungsi pada listing tersebut disebut dengan fungsi _callback_. Untuk keperluan pembahasan saat ini, untuk sementara yang perlu dipahami adalah hasil input akan dimasukkan ke _answer_ untuk diproses lebih lanjut. Fungsi dan _callback_ akan dibahas lebih lanjut pada pembahasan berikutnya.
 ====
 
 ==== Nilai/Value dan Tipe Data
@@ -134,18 +134,26 @@ _function(answer)_ pada listing di atas merupakan _anonymous function_ atau fung
 Program dalam JavaScript akan berhubungan dengan data atau nilai. Setiap nilai mempunyai tipe tertentu. JavaScript mengenali berbagai tipe berikut ini:
 
 * Angka: bulat (misalnya 4) atau pecahan (misalnya 3.75)
-* __Boolean__: nilai benar (true) dan salah (false)
-* String: diapit oleh tanda petik ganda (``contoh string'') atau tunggal
-(’contoh string’)
+* _Boolean_: nilai benar (true) dan salah (false)
+* String: diapit oleh tanda petik ganda ("contoh string") atau tunggal (’contoh string’)
 * _null_
 * _undefined_
 
-JavaScript adalah bahasa pemrograman yang mengijinkan pemrogram untuk tidak mendefinisikan tipe data pada saat deklarasi, atau sering juga disebut sebagai __dynamically typed language__:
+JavaScript adalah bahasa pemrograman yang mengijinkan pemrogram untuk tidak mendefinisikan tipe data pada saat deklarasi, atau sering juga disebut sebagai _dynamically typed language_:
+
+[source,javascript]
+.dynamic.js
+----
+include::kode/bab-02/dynamic.js[]
+----
 
 Pada contoh di atas, kita bisa melihat bahwa data akan dikonversi secara otomatis pada saat program dieksekusi.
 
-NOTES: Khusus untuk operator ``+'', JavaScript akan melakukan penggabungan string (__string concatenation__), tetapi untuk operator lain, akan dilakukan operasi matematis sesuai operator tersebut (-,/,*). Konversi string ke tipe numerik bisa dilakukan dengan _parseInt(string)_ (jika bilangan bulat) dan _parseFloat(string)_ (jika
+[NOTE]
+====
+Khusus untuk operator ``+'', JavaScript akan melakukan penggabungan string (_string concatenation_), tetapi untuk operator lain, akan dilakukan operasi matematis sesuai operator tersebut (-,/,*). Konversi string ke tipe numerik bisa dilakukan dengan _parseInt(string)_ (jika bilangan bulat) dan _parseFloat(string)_ (jika
 bilangan pecahan).
+====
 
 ==== Variabel
 
@@ -155,11 +163,17 @@ Variabel adalah suatu nama yang didefinisikan untuk menampung suatu nilai. Nama 
 * Karakter berikutnya bisa berupa angka, selain ketentuan pertama di atas.
 * Membedakan huruf besar - kecil.
 
-Konvensi yang digunakan oleh pemrogram JavaScript terkait dengan penamaan ini adalah variasi dari metode __camel case__, yaitu __camelBack__. Contoh: jumlahMahasiswa, linkMenu, status.
+Konvensi yang digunakan oleh pemrogram JavaScript terkait dengan penamaan ini adalah variasi dari metode _camel case_, yaitu __camelBack_. Contoh: jumlahMahasiswa, linkMenu, status.
 
 ==== Konstanta
 
-Konstanta mirip dengan variabel, hanya saja sifatnya __read-only__, tidak bisa diubah-ubah setelah ditetapkan. Untuk menetapkan konstanta di JavaScript, digunakan kata kunci __const__. Contoh:
+Konstanta mirip dengan variabel, hanya saja sifatnya _read-only_, tidak bisa diubah-ubah setelah ditetapkan. Untuk menetapkan konstanta di JavaScript, digunakan kata kunci _const_. Contoh:
+
+[source,javascript]
+.const.js
+----
+include::kode/bab-02/const.js[]
+----
 
 Konvensi penamaan konstanta adalah menggunakan huruf besar semua. Bagian ini (sampai saat buku ini ditulis) hanya berlaku di Firefox dan Google Chrome - V8 (artinya berlaku juga untuk Node.js).
 
@@ -167,28 +181,93 @@ Konvensi penamaan konstanta adalah menggunakan huruf besar semua. Bagian ini (sa
 
 ===== Pengertian Fungsi
 
-Fungsi merupakan subprogram atau suatu bagian dari keseluruhan program yang ditujukan untuk mengerjakan suatu pekerjaan tertentu dan (biasanya) menghasilkan suatu nilai kembalian. Subprogram ini relatif independen terhadap bagian-bagian lain sehingga memenuhi kaidah ``bisa-digunakan-kembali'' atau _reusable_ pada beberapa program yang memerlukan fungsionalitasnya. Fungsi dalam ilmu komputer sering kali juga disebut dengan __prcedure, routine__, atau __method__.
+Fungsi merupakan subprogram atau suatu bagian dari keseluruhan program
+yang ditujukan untuk mengerjakan suatu pekerjaan tertentu dan
+(biasanya) menghasilkan suatu nilai kembalian. Subprogram ini relatif
+independen terhadap bagian-bagian lain sehingga memenuhi kaidah
+"bisa-digunakan-kembali" atau _reusable_ pada beberapa program yang
+memerlukan fungsionalitasnya. Fungsi dalam ilmu komputer sering kali
+juga disebut dengan _procedure, routine_, atau _method_.
 
 ===== Definisi Fungsi
 
 Definisi fungsi dari JavaScript di Node.js bisa dilakukan dengan sintaksis berikut ini:
 
-Setelah dideklarasikan, fungsi tersebut bisa dipanggil dengan cara
-sebagai berikut:
+[source,javascript]
+----
+function namaFungsi(argumen1, argumen2, ... , argumentN) {
+  ..
+  JavaScript code ..
+  JavaScript code ..
+  JavaScript code ..
+  JavaScript code ..
+  ..
+}
+----
+
+Setelah dideklarasikan, fungsi tersebut bisa dipanggil dengan cara sebagai berikut:
+
+[source, javascript]
+----
+..
+..
+  namaFungsi(argumen1, argumen2, ..., argumenN);
+..
+..
+----
 
 Contoh dalam program serta pemanggilannya adalah sebagai berikut:
 
+[source, javascript]
+----
+$ node
+> function addX(angka) {
+... console.log(angka + 10);
+... }
+undefined
+> addX(20);
+30
+undefined
+>
+> function add2Numbers(angka1, angka2) {
+... return angka1 + angka2;
+... }
+undefined
+> console.log("232 + 432 = " + add2Numbers(232, 432));
+232 + 432 = 664
+undefined
+>
+----
+
 ===== Fungsi Anonim
 
-Fungsi anonim adalah fungsi tanpa nama, pemrogram tidak perlu memberikan nama ke fungsi. Biasanya fungsi anonimus ini hanya digunakan untuk fungsi yang dikerjakan pada suatu bagian program saja dan tidak dengan maksud untuk dijadikan komponen yang bisa dipakai di bagian lain dari program (biasanya untuk menangani _event_ atau __callback__). Untuk mendeklarasikan fungsi ini, digunakan literal __function__.
+Fungsi anonim adalah fungsi tanpa nama, pemrogram tidak perlu memberikan nama ke fungsi. Biasanya fungsi anonimus ini hanya digunakan untuk fungsi yang dikerjakan pada suatu bagian program saja dan tidak dengan maksud untuk dijadikan komponen yang bisa dipakai di bagian lain dari program (biasanya untuk menangani _event_ atau _callback_). Untuk mendeklarasikan fungsi ini, digunakan literal _function_.
+
+[source, javascript]
+.fungsiAnonim.js
+----
+include::kode/bab-02/fungsiAnonim.js[]
+----
 
 ===== Fungsi Rekursif
 
 Fungsi rekursif adalah fungsi yang memanggil dirinya sendiri. Contoh dari aplikasi fungsi rekursif adalah pada penghitungan faktorial berikut:
 
+[source, javascript]
+.fungsiRekursif.js
+----
+include::kode/bab-02/fungsiRekursif.js[]
+----
+
 ===== Fungsi di dalam Fungsi / _Nested Functions_
 
 Saat mendefinisikan fungsi, di dalam fungsi tersebut pemrogram bisa mendefinisikan fungsi lainnya. Meskipun demikian, fungsi yang terletak alam suatu definisi fungsi tidak bisa diakses dari luar fungsi tersebut dan hanya tersedia untuk fungsi yang didefinisikan.
+
+[source, javascript]
+.nested.js
+----
+include::kode/bab-02/nested.js[]
+----
 
 ==== Literal
 
@@ -198,21 +277,47 @@ Literal digunakan untuk merepresentasikan nilai dalam JavaScript. Ada beberapa t
 
 Array atau variabel berindeks adalah penampung untuk obyek yang menyerupai _list_ atau daftar. Obyek array juga menyediakan berbagai fungsi dan metode untuk mengolah anggota yang terdapat dalam daftar tersebut (terutama untuk operasi _traversal_ dan permutasi. Listing berikut menunjukkan beberapa operasi untuk literal array.
 
+[source, javascript]
+.array.js
+----
+include::kode/bab-02/array.js[]
+----
+
 ===== Literal Boolean
 
 Literal boolean menunjukkan nilai benar (true) atau salah (false).
+
+[source, javascript]
+.boolean.js
+----
+include::kode/bab-02/boolean.js[]
+----
 
 ===== Literal Integer
 
 Literal integer digunakan untuk mengekspresikan nilai bilangan bulat. Nilai bulangan bulat dalam JavaScript bisa dalam bentuk:
 
-* decimal (basis 10): digit tanpa awalan nol.
-* octal (basis 8): digit diawali dengan 1 angka nol.footnote:[pada ECMA-262, bilangan octal ini sudah tidak digunakan lagi.]
-* hexadecimal (basis 16): digit diawali dengan 0x.
+* _binary_ (basis 2): digit diawali dengan 0b.
+* _decimal_ (basis 10): digit tanpa awalan nol.
+* _octal_ (basis 8): digit diawali dengan 1 angka nol. Pada ECMA-262,
+  bilangan _octal_ ini sudah tidak digunakan lagi.
+* _hexadecimal_ (basis 16): digit diawali dengan 0x.
+
+[source, javascript]
+.integers.js
+----
+include::kode/bab-02/integers.js[]
+----
 
 ===== Literal Floating-point
 
 Literal ini digunakan untuk mengekspresikan nilai bilangan pecahan, misalnya 0.4343 atau bisa juga menggunakan E/e (nilai eksponensial), misalnya -3.1E12.
+
+[source, javascript]
+.floatingPoint.js
+----
+include::kode/bab-02/floatingPoint.js[]
+----
 
 ===== Literal Obyek
 
@@ -220,15 +325,17 @@ Literal ini akan dibahas di bab yang menjelaskan tentang paradigma pemrograman b
 
 ===== Literal String
 
-Literal string mengekspresikan suatu nilai dalam bentuk sederetan karakter dan berada dalam tanda petik (ganda/``'' maupun tunggal/”). Contoh:
+Literal string mengekspresikan suatu nilai dalam bentuk sederetan
+karakter dan berada dalam tanda petik (ganda/"""" maupun tunggal/''). Contoh:
 
-* ``Kembali ke halaman utama''
+* "Kembali ke halaman utama"
 * ’Lisensi’
-* ``Hari ini, Jum’at, tanggal 21 November''
-* ``1234.543''
-* ``baris pertama `\n` baris kedua''
+* "Hari ini, Jum’at, tanggal 21 November"
+* "1234.543"
+* "baris pertama \n baris kedua"
 
-Contoh terakhir di atas menggunakan karakter khusus (`\n`). Beberapa karakter khusus lainnya adalah:
+Contoh terakhir di atas menggunakan karakter khusus (
+*\n*). Karakter khusus ini sering disebut dengan _escape character_. Beberapa karakter khusus lainnya adalah:
 
 * `\b`: Backspace
 * `\f`: Form feed
@@ -239,20 +346,29 @@ Contoh terakhir di atas menggunakan karakter khusus (`\n`). Beberapa karakter kh
 * `\'`: Apostrophe atau single quote
 * `\"`: Double quote
 * `\\`: Backslash (`\`).
-* `\XXX`: Karakter dengan pengkodean Latin-1 dengan tiga digit octal antara 0 and 377. (misal, `\`251 adalah simbol hak cipta).
+* `\XXX`: Karakter dengan pengkodean Latin-1 dengan tiga digit octal
+  antara 0 and 377. (misal, `\251` adalah simbol hak cipta).
 * `\xXX`: seperti di atas, tetapi hexadecimal (2 digit).
 * `\uXXXX`: Karakter _Unicode_ dengan 3 digit karakter hexadecimal.
 
-Backslash sendiri sering digunakan sebagai __escape character__, misalnya ``NaN sering disebut juga sebagai `\`''Not a Number`\```''.
-
 ==== Struktur Data dan Representasi JSON
 
-JSON (__JavaScript Object Notation__) adalah subset dari JavaScript dan merupakan struktur data native di JavaScript. Bentuk dari representasi struktur data JSON adalah sebagai berikutfootnote:[http://en.wikipedia.org/wiki/JSON dengan sedikit perubahan]:
+JSON (_JavaScript Object Notation_) adalah subset dari JavaScript dan
+merupakan struktur data native di JavaScript. Bentuk dari representasi
+struktur data JSON adalah sebagai berikut (diambil dari
+http://en.wikipedia.org/wiki/JSON dengan sedikit perubahan):
+
+[source, javascript]
+.json.js
+----
+include::kode/bab-02/json.js[]
+----
 
 Dari representasi di atas, kita bisa membaca:
 
-* Nilai data ``firstname'' adalah ``John''
-* Data ``address'' terdiri atas sub data ``streetAddress'', ``city'', ``state'', dan ``postalCode'' yang masing-masing mempunyai nilai data sendiri-sendiri.
+* Nilai data _firstname_ adalah _John_
+* Data _address_ terdiri atas sub data _streetAddress_, _city_,
+  _state_, dan _postalCode_ yang masing-masing mempunyai nilai data sendiri-sendiri.
 * dan seterusnya
 
 ==== Aliran Kendali
@@ -263,9 +379,21 @@ Alur program dikendalikan melalui pernyataan-pernyataan untuk aliran kendali. Ad
 
 Pernyataan ini digunakan untuk mengerjakan atau tidak mengerjakan suatu bagian atau blok program berdasarkan hasil evaluasi kondisi tertentu.
 
+[source, javascript]
+.if.js
+----
+include::kode/bab-02/if.js[]
+----
+
 ===== Pernyataan _switch_
 
 Pernyataan ini digunakan untuk mengevaluasi suatu ekspresi dan membandingkan sama atau tidaknya dengan suatu label tertentu di dalam struktur pernyataan switch, serta mengeksekusi perintah-perintah sesuai dengan label yang cocok.
+
+[source, javascript]
+.switch.js
+----
+include::kode/bab-02/switch.js[]
+----
 
 ===== _Looping_
 
@@ -273,25 +401,75 @@ Looping atau sering juga disebut ``kalang'' adalah konstruksi program yang digun
 
 *for*
 
+[source, javascript]
+.for.js
+----
+include::kode/bab-02/for.js[]
+----
+
 Pernyataan ``for'' juga bisa digunakan untuk mengakses data yang tersimpam dalam struktur data JavaScript (JSON).
+
+[source, javascript]
+.forIn.js
+----
+include::kode/bab-02/forIn.js[]
+----
 
 *do .. while*
 
 Pernyataan ini digunakan untuk mengerjakan suatu blok program selama suatu kondisi bernilai benar dengan jumlah minimal pengerjaan sebanyak 1 kali.
 
+[source, javascript]
+.doWhile.js
+----
+include::kode/bab-02/doWhile.js[]
+----
+
 *while*
 
-Seperti __do .. while__, pernyataan ini digunakan untuk mengerjakan suatu blok program secara berulang-ulang selama kondisi bernilai benar. Meskipun demikian, bisa saja blok program tersebut tidak pernah dikerjakan jika pada saat awal expresi dievaluasi sudah bernilai __false__.
+Seperti _do .. while_, pernyataan ini digunakan untuk mengerjakan suatu blok program secara berulang-ulang selama kondisi bernilai benar. Meskipun demikian, bisa saja blok program tersebut tidak pernah dikerjakan jika pada saat awal expresi dievaluasi sudah bernilai _false_.
+
+[source, javascript]
+.while.js
+----
+include::kode/bab-02/while.js[]
+----
 
 *label, break, dan continue*
 
-Bagian ini digunakan dalam _looping_ dan __switch__.
+Bagian ini digunakan dalam _looping_ dan _switch_.
 
 * _label_ digunakan untuk memberi pengenal pada suatu lokasi program sehingga bisa direferensi oleh _break_ maupun _continue_ (jikaa dikehendaki).
 * _break_ digunakan untuk menghentikan eksekusi dan meneruskan alur program ke pernyataan setelah _looping_ atau _switch_
 * _continue_ digunakan untuk meneruskan eksekusi ke iterasi atau ke kondisi switch berikutnya.
 
+[source, javascript]
+.breakContinue.js
+----
+include::kode/bab-02/breakContinue.js[]
+----
+
+[source, javascript]
+.breakWithLabel.js
+----
+include::kode/bab-02/breakWithLabel.js[]
+----
+
 ===== Penanganan Error
 
-JavaScript mendukung pernyataan _try .. catch .. finally_ serta _throw_ untuk menangani error. Meskipun demikian, banyak hal yang tidak sesuai dengan konstruksi ini karena sifat JavaScript yang __asynchronous__. Untuk kasus asynchrous, pemrogram lebih disarankan menggunakan __function callback__. Jika diperlukan, kita bisa mendefinisikan sendiri error dengana menggunakan pernyataan __throw__.
+JavaScript mendukung pernyataan _try .. catch .. finally_ serta
+_throw_ untuk menangani error. Meskipun demikian, banyak hal yang
+tidak sesuai dengan konstruksi ini karena sifat JavaScript yang
+_asynchronous_. Untuk kasus asynchronous, pemrogram lebih disarankan menggunakan _function callback_. Jika diperlukan, kita bisa mendefinisikan sendiri error dengana menggunakan pernyataan _throw_.
 
+[source, javascript]
+.try.js
+----
+include::kode/bab-02/try.js[]
+----
+
+[source, javascript]
+.throw.js
+----
+include::kode/bab-02/throw.js[]
+----

@@ -2,47 +2,132 @@
 
 === Apakah npm Itu?
 
-Node.js memungkinkan developer untuk mengembangkan aplikasi secara modular dengan memisahkan berbagai komponen _reusable code_ ke dalam pustaka (__library__). Berbagai pustaka tersebut bisa diperoleh di http://npmjs.org. Node.js menyediakan perintah _npm_ untuk mengelola paket pustaka di repositori tersebut. Untuk menggunakan utilitas ini,pemrogram harus terkoneksi dengan Internet.
+Node.js memungkinkan developer untuk mengembangkan aplikasi secara
+modular dengan memisahkan berbagai komponen _reusable code_ ke dalam
+pustaka (_library_). Berbagai pustaka tersebut bisa diperoleh di
+http://www.npmjs.com[]. Node.js menyediakan perintah _npm_ untuk mengelola paket pustaka di repositori tersebut. Untuk menggunakan utilitas ini,pemrogram harus terkoneksi dengan Internet.
 
 === Menggunakan npm
 
-Saat melakukan instalasi Node.js, secara otomatis _npm_ akan disertakan. Dengan perintah _npm_ tersebut, seorang pemrogram bisa mengelola pustaka yang tersedia di repositori. Jika pemrogram mempunya pustakan yang bisa digunakan oleh orang lain, maka pemrogram yang bersangkutan juga bisa menyimpan pustaka tersebut ke dalam repositori sehingga memungkinkan untuk diinstall oleh pemrogram-pemrogram lain di seluruh dunia. Sintaksis lengkap dari penggunaan perintah _npm_ ini adalah sebagai berikutfootnote:[beberapa bagian tertulis spesifik lokasi direktori di komputer yang digunakan penulis]:
+Saat melakukan instalasi Node.js, secara otomatis _npm_ akan
+disertakan. Dengan perintah _npm_ tersebut, seorang pemrogram bisa
+mengelola pustaka yang tersedia di repositori. Jika pemrogram mempunya
+pustakan yang bisa digunakan oleh orang lain, maka pemrogram yang
+bersangkutan juga bisa menyimpan pustaka tersebut ke dalam repositori
+sehingga memungkinkan untuk diinstall oleh pemrogram-pemrogram lain di
+seluruh dunia. Sintaksis lengkap dari penggunaan perintah _npm_ ini
+adalah sebagai berikut:
+
+----
+Usage: npm <command>
+
+where <command> is one of:
+    access, add-user, adduser, apihelp, author, bin, bugs, c,
+    cache, completion, config, ddp, dedupe, deprecate, dist-tag,
+    dist-tags, docs, edit, explore, faq, find, find-dupes, get,
+    help, help-search, home, i, info, init, install, issues, la,
+    link, list, ll, ln, login, logout, ls, outdated, owner,
+    pack, ping, prefix, prune, publish, r, rb, rebuild, remove,
+    repo, restart, rm, root, run-script, s, se, search, set,
+    show, shrinkwrap, star, stars, start, stop, t, tag, team,
+    test, tst, un, uninstall, unlink, unpublish, unstar, up,
+    update, upgrade, v, verison, version, view, whoami
+
+npm <cmd> -h     quick help on <cmd>
+npm -l           display full usage info
+npm faq          commonly asked questions
+npm help <term>  search for help on <term>
+npm help npm     involved overview
+
+Specify configs in the ini-formatted file:
+    /home/bpdp/.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@2.14.7 /opt/software/node-v4.2.1-linux-x64/lib/node_modules/npm
+----
+
+[NOTE]
+====
+Lokasi direktori pada sintaks penggunaan _npm_ tersebut adalah lokasi
+spesifik di komputer penulis (misalnya: */home/bpdp/.npmrc*).
+====
 
 Pada bagian berikut, kita akan membahas lebih lanjut penggunaan perintah _npm_ tersebut.
 
 ==== Instalasi Paket
 
-npm sebenarnya bukan merupakan singkatan dari __Node Package Manager__, meskipun seringkali orang menterjemahkan dengan singkatan tersebut dan npm seharusnya ditulis dalam huruf kecil semua seperti yang dijelaskan pada FAQ (__Frequently Asked Questions__)footnote:[https://npmjs.org/doc/faq.html]. npm merupakan bilah alat berbasis baris perintah, dijalankan melalui shell atau __command prompt__. Sama seperti kebanyakan bilah alat berbasis baris perintah lain, npm memiliki struktur perintah __npm perintah argumen__. Installasi paket pustaka dilakukan dengan perintah berikut: 
+_npm_ sebenarnya bukan merupakan singkatan dari _Node Package Manager_,
+meskipun seringkali orang menterjemahkan dengan singkatan tersebut.
+_npm_ seharusnya ditulis dalam huruf kecil semua seperti yang
+dijelaskan pada https://docs.npmjs.com/misc/faq[FAQ]. _npm_ merupakan
+perintah di _shell / command line_. Struktur perintahnya adalah: _npm
+perintah argumen_. Instalasi paket dilakukan dengan perintah berikut: 
 
-Perintah diatas akan memasang versi terakhir dari paket ``namapaket''. Selain itu _npm_ juga dapat memasang paket langsung pada sebuah folder, tarball atau tautan untuk sebuah tarball.
+----
+$ npm install namapaket
+----
+
+Perintah diatas akan memasang versi terakhir dari paket _namapaket_.
 
 ==== Struktur Instalasi Paket Node.js
 
-Dalam installasi paket pustaka, berkas-berkas akan terletak dalam folder lokal aplikasi __node_modules__. Pada mode installasi paket pustaka global (dengan -g atau –global dibelakang baris perintah), paket pustaka akan dipasang pada _/usr/lib/node_modules_ (dengan lokasi installasi Node.js standar). Mode global memungkinkan paket pustaka digunakan tanpa memasang paket pustaka pada setiap folder lokal aplikasi. Mode global ini juga membutuhkan hak administrasi lebih (sudo atau root) dari pengguna agar dapat menulis pada lokasi standar.
+Dalam installasi paket pustaka, berkas-berkas akan terletak dalam folder lokal aplikasi _node_modules_. Pada mode installasi paket pustaka global (dengan -g atau –global dibelakang baris perintah), paket pustaka akan dipasang pada _/usr/lib/node_modules_ (dengan lokasi installasi Node.js standar). Mode global memungkinkan paket pustaka digunakan tanpa memasang paket pustaka pada setiap folder lokal aplikasi. Mode global ini juga membutuhkan hak administrasi lebih (sudo atau root) dari pengguna agar dapat menulis pada lokasi standar.
 
 Jika berada pada direktori $HOME, maka paket-paket npm tersebut akan terinstall di $HOME/.npm, sedangkan jika kita berada di luar direktori $HOME, maka paket-paket tersebut akan terinstall di $CWD/node_modules ($CWD = _Current Working Directory_ - direktori aktif saat ini). Daftar paket pustaka yang terpasang dapat dilihat menggunakan perintah berikut:
 
-Selain melihat daftar paket pustaka yang digunakan dalam aplikasi maupun global, perintah diatas juga akan menampilkan paket dependensi dalam struktur pohon. Jika kita belum menginstall paket-paket yang diperlukan, akan muncul peringatan. Berikut ini adalah contoh peringatan dari paket-paket yang belum terinstall di aplikasi hello-express saat mengerjakan perintah ``npm ls'' di direktori tempat aplikasi tersebut berada (lihat bab 1):
+----
+$ npm ls
+----
 
-Jika sudah terinstall, perintah ``npm ls'' akan menampilkan struktur dari paket yang telah terinstall dalam bentuk struktur pohon seperti pada Gambar [fig:npm-ls-paket-terinstall].
+Selain melihat daftar paket pustaka yang digunakan dalam aplikasi maupun global, perintah diatas juga akan menampilkan paket dependensi dalam struktur pohon. Jika kita belum menginstall paket-paket yang diperlukan, akan muncul peringatan. 
 
-image:images/npm-ls-paket-terinstall.jpg[Tampilan ``npm ls'' pada direktori proyek dengan paket terinstall lengkap]
+----
+$ npm ls --depth=0
+weberiajs@1.0.0 /home/bpdp/kerjaan/git-repos/weberia/weberiajs
+├── UNMET DEPENDENCY hapi@^11.0.2
+└── jsonld@0.4.2
+
+npm ERR! missing: hapi@^11.0.2, required by weberiajs@1.0.0
+----
+
+Jika sudah terinstall, perintah "npm ls" akan menampilkan struktur
+dari paket yang telah terinstall dalam bentuk struktur pohon.
 
 ==== Menghapus Paket / _Uninstall_
 
-Menghapus paket pustaka menggunakan npm pada dasarnya hampir sama dengan saat memasang paket, namun dengan perintah __uninstall__. Berikut perintah lengkapnya.
+Menghapus paket pustaka menggunakan npm pada dasarnya hampir sama
+dengan saat memasang paket, namun dengan perintah _uninstall_. Berikut
+perintah lengkapnya:
+
+----
+$ npm uninstall namapaket
+----
 
 ==== Mencari Paket
 
-Untuk mencari paket, gunakan argumen _search_ dan nama atau bagian dari nama paket yang dicari. Contoh berikut ini akan mencari paket dengan kata kunci ’sha512’ (tampilan berikut merupakan tampilan yang terpotong):
+Untuk mencari paket, gunakan argumen _search_ dan nama atau bagian dari nama paket yang dicari. Contoh berikut ini akan mencari paket dengan kata kunci ’sha512’:
+
+----
+$ npm search sha512
+----
 
 Setelah menemukan paketnya, pemrogram bisa menginstall langsung ataupun melihat informasi lebih lanjut tentang pustakan tersebut.
 
 ==== Menampilkan Informasi Paket
 
-Setelah mengetahui nama paket, pemrogram bisa memperoleh informasi lebih lanjut dalam format JSON menggunakan parameter __view__. Contoh dibawah ini menampilkan rincian dalam format JSON dari paket __arango.client__: 
+Setelah mengetahui nama paket, pemrogram bisa memperoleh informasi
+lebih lanjut dalam format JSON menggunakan parameter _view_. Contoh
+dibawah ini menampilkan rincian dalam format JSON dari paket _arangojs_: 
+
+----
+$ npm info arangojs
+----
 
 ==== Memperbaharui Paket
 
 Jika terdapat versi baru, kita bisa memperbaharui secara otomatis menggunakan argumen _update_ berikut ini:
 
+----
+$ npm update
+----
