@@ -2,7 +2,7 @@
 
 === Apa itu Pola Arsitektur?
 
-Pola arsitektur (__architectural pattern__) adalah konsep dan standar arsitektur yang membentuk suatu aplikasi. Pola disini mengacu pada _best practices_ atau praktik-praktik terbaik yang terutama terkait dengan arsitektur dari software aplikasi. Pola arsitektur terdiri atas elemen-elemen software, properti dari elemen-elemen tersebut, serta hubungan antar elemen-elemen tersebut.
+Pola arsitektur (_architectural pattern_) adalah konsep dan standar arsitektur yang membentuk suatu aplikasi. Pola disini mengacu pada _best practices_ atau praktik-praktik terbaik yang terutama terkait dengan arsitektur dari software aplikasi. Pola arsitektur terdiri atas elemen-elemen software, properti dari elemen-elemen tersebut, serta hubungan antar elemen-elemen tersebut.
 
 === Pola Arsitektur MVC
 
@@ -12,11 +12,12 @@ MVC (Model-View-Controller) merupakan pola arsitektur aplikasi Web yang memisahk
 * View: tampilan antarmuka aplikasi Web, biasanya berisi semacam template dan isi-isi dinamis dari tampilan antarmuka tersebut.
 * Controller: menerima _requests_ atau permintaan dari browser kemudian mengarahkan ke _event-handler_ untuk diproses. Proses tersebut bisa saja berupa langsung menghasilkan view (X)HTML atau format lainnya, atau bisa juga diproses terlebih dahulu di model dan kemudian hasilnya akan dikirimkan ke view untuk diisikan ke isi-isi dinamis serta membentuk file (X)HTML untuk ditampilkan di browser (sebenarnya tidak selalu perlu harus (X)HTML).
 
-Jika digambarkan dalam suatu diagram, pola arsitektur MVC ditampilkan pada gambar [fig:mvc]
+[[img-mvc]]
+.Pola arsitektur MVC
+image::gambar/mvc.jpg[Pola arsitektur MVC]
 
-image:images/mvc.jpg[Pola arsitektur MVC]
-
-Pola ini dikenal juga dengan istilah Model 2 dan dipopulerkan oleh JavaEE.
+Jika digambarkan dalam suatu diagram, pola arsitektur MVC ditampilkan
+pada gambar <<img-mvc>>. Pola ini dikenal juga dengan istilah Model 2 dan dipopulerkan oleh JavaEE.
 
 === Implementasi Pola Arsitektur MVC Menggunakan ExpressJS
 

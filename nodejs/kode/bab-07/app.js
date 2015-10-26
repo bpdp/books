@@ -1,13 +1,12 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./controllers')
-  , user = require('./controllers/user')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+    routes = require('./controllers'),
+    user = require('./controllers/user'),
+    http = require('http'),
+    path = require('path');
 
 var mongoose = require('mongoose');
 
