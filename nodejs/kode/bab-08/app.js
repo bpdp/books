@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -16,11 +15,7 @@ server.listen(80);
 // all environments
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(app.router);
+//app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);

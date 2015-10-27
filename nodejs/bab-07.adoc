@@ -21,28 +21,13 @@ pada gambar <<img-mvc>>. Pola ini dikenal juga dengan istilah Model 2 dan dipop
 
 === Implementasi Pola Arsitektur MVC Menggunakan ExpressJS
 
-Sebenarnya ExpressJS bukan merupakan _framework_ MVC, meskipun demikian karena framework ini sangat fleksibel, maka pemrogram bisa mengatur sendiri lokasi dari file / direktori serta berbagai konfigurasi lainnya. Contoh implementasi disini adalah aplikasi sederhana untuk menampilkan data yang tersimpan dalam basis data mongoDB ke dalam format JSON yang bisa diakses dari browser.
-
-==== Struktur Aplikasi
-
-Setelah membuat kerangka aplikasi menggunakan ExpressJS, ada beberapa perubahan yang harus dilakukan. Perubahan ini terutama dilakukan untuk mengikuti pola arsitektur MVC (terutama peletakan file dan direktori). Pola asli dari kerangka aplikasi ExpressJS adalah sebagai berikut:
-
-Struktur direktori tersebut akan diubah sesuai dengan pola MVC:
-
-Beberapa perubahan terhadap struktur direktori:
-
-* direktori routes diubah menjadi _controllers_
-* membuat direktori _models_ untuk mendefinisikan skema basis data
-
-==== File-file yang Diperlukan
-
-Beberapa file diubah isinya dan ada juga file yang baru.
-
-==== Hasil
-
-Setelah server dieksekusi (menggunakan perintah __node app.js__), maka hasilnya akan bisa diakses di http://localhost:3000/users. Hasil di browser bisa dilihat di gambar [fig:hasil-mvc]
-
-image:images/mvc-result.jpg[Pola arsitektur MVC]
+Sebenarnya ExpressJS bukan merupakan _framework_ MVC, meskipun
+demikian karena framework ini sangat fleksibel, maka pemrogram bisa
+mengatur sendiri lokasi dari file / direktori serta berbagai
+konfigurasi lainnya. Contoh implementasi disini adalah aplikasi
+sederhana untuk menampilkan data yang tersimpan dalam basis data
+mongoDB ke dalam format JSON yang bisa diakses dari browser. Contoh
+rerangka aplikasi MVC menggunakan Express bisa diperoleh di https://github.com/bpdp/express-mongoose-mvc
 
 === Pola Arsitektur Aplikasi Web Lain dan Implementasinya
 
@@ -54,4 +39,3 @@ Knockout.js (http://knockoutjs.com)
 - MVA (Model-View-Adapter).
 - Hierarchical MVC
 - Presentation-Abstract-Control.
-

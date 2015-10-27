@@ -50,7 +50,7 @@ File server.js dijalankan lebih dulu, setelah itu baru menjalankan server-on-err
 include::kode/bab-05/edp/server.js[]
 ----
 
-[source. javascript]
+[source, javascript]
 .server-on-error.js
 ----
 include::kode/bab-05/edp/server-on-error.js[]

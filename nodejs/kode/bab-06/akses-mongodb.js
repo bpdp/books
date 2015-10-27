@@ -1,6 +1,10 @@
+// sebelum mengerjakan ini:
+// $ npm install mongojs
+
 var databaseUrl = "localhost/mydb";
 var collections = ["employees"];
-var db = require("mongojs").connect(databaseUrl, collections);
+var mongojs = require('mongojs');
+var db = mongojs(databaseUrl, collections);
 
 // mencari pegawai bernama Aditya
 db.employees.find({name: "Aditya"}, function(err, employees) {

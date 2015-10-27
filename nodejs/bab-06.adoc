@@ -205,14 +205,23 @@ Mengakses mongoDB dari Node.js bisa dilakukan dengan menggunakan driver atau ber
 
 Dengan menggunakan _collections_ dan _documents_ di atas, kita akan mengakses data tersebut menggunakan Node.js. Untuk lebih menyederhanakan, kita akan menggunakan _wrapper_ dari mongoDB native driver, yaitu Mongojs. Install Mongojs lebih dahulu menggunakan npm:
 
-TODO
+----
+$ npm install mongojs
+----
 
 Setelah itu, buat program sesuai dengan listing program berikut. 
 
+[source, javascript]
+.akses-mongodb.js
+----
+include::kode/bab-06/akses-mongodb.js
+----
+
 === Aplikasi Web Menggunakan Node.js dan mongoDB
 
-Contoh aplikasi web berikut hanya digunakan untuk mengambil data dari mongoDB kemudian menampilkannya di web. Data diambil dari basis data mongoDB yang sudah dibuat sebelumnya (mydb). Untuk keperluan ini, kita akan menggunakan framework Express (http://expressjs.com). Install Express di level global dengan __npm install -g express__. Setelah terinstall, buat subdirektori baru (lokasi bebas) yang akan digunakan untuk menyimpan aplikasi web. Setelah itu, masuk ke direktori tersebut kemudian buat kerangka aplikasi di subdirektori tersebut menggunakan
-perintah ``express'' (lihat bab 1).
-
-Berikut ini adalah beberapa perubahan yang dilakukan untuk rerangka aplikasi yang dihasilkan dari perintah _express_ tersebut. Selain itu, ada beberapa tambahan file (routes/employee.js dan views/employee.jade), penghapusan file (routes/user.js), dan perubahan yang cukup signifikan pada file __views/index.jade__.
-
+Contoh aplikasi web berikut hanya digunakan untuk mengambil data dari
+mongoDB kemudian menampilkannya di web. Data diambil dari basis data
+mongoDB yang sudah dibuat sebelumnya (mydb). Untuk keperluan ini, kita
+akan menggunakan framework Express (http://expressjs.com). Listing dan
+penjelasan mengenai software ini bisa diperoleh di direktori
+*kode/bab-06/web/*
