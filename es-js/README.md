@@ -9,13 +9,9 @@ Buku ini ini merupakan buku bebas dengan lisensi
 
 ![Logo buku](gambar/logo-refactory--small.png)
 
-2017 - Refactory
+Hak cipta 2017 - Refactory. Silahkan melihat ke lisensi CC-BY-SA seperti pada penjelasan di atas untuk mengetahui implikasi dari hak cipta terhadap karya ini.
 
 # Penulis
 
-[Bambang Purnomosidi D. P.](http://bpdp.xyz)
-
-[Twitter](https://twitter.com/bpdp)
-
-[Facebook](https://www.facebook.com/bambangpdp)
+[Bambang Purnomosidi D. P.](http://bpdp.xyz) - [Twitter](https://twitter.com/bpdp) - [Facebook](https://www.facebook.com/bambangpdp)
 
