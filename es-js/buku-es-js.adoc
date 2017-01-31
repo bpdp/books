@@ -1,0 +1,58 @@
+= ECMAScript dan JavaScript
+Bambang Purnomosidi D. P. <bdfl@bpdp.xyz>
+v1.0, 2017-02
+:icons: font
+:toc:
+:homepage: http://bpdp.xyz
+:source-highlighter: coderay
+
+[abstract]
+image:./gambar/logo-buku.png[Logo buku]
+
+Buku ini ini merupakan buku bebas dengan lisensi
+https://creativecommons.org/licenses/by-sa/4.0/legalcode[CC-BY-SA].
+Buku ini merupakan buku yang dirancang untuk keperluan memberikan
+pengetahuan mendasar tentang JavaScript dan ekosistemnya. Pembahasan
+tentang ECMAScript diperlukan karena JavaScript merupakan implementasi
+dari spesifikasi ECMAScript dan kedua istilah tersebut sering
+digunakan secara bergantian. Secara umum, buku ini menggunakan Node.js
+sebagai platform pengembangan aplikasi JavaScript. Node.js merupakan software di sisi server yang dikembangkan dari _engine_ JavaScript V8 dari Google serta https://github.com/joyent/libuv[libuv]. Versi sebelum 0.9.0 menggunakan _libev_ dari Mark Lechmann.
+
+Untuk mengikuti materi yang ada pada buku ini, pembaca diharapkan menyiapkan peranti komputer dengan beberapa software berikut terpasang:
+
+* Sistem operasi Linux (distribusi apa saja) - lihat di http://www.distrowatch.com[DistroWatch]. Sistem operasi Linux ini bukan keharusan, anda bisa menggunakan Windows tetapi silahkan membuat penyesuaian-penyesuaian sendiri yang diperlukan. Kirimi saya _pull request_ jika anda menuliskan pengalaman anda di Windows!
+* Git (untuk _version control system_) - bisa diperoleh di http://git-scm.com.
+* Vim (untuk mengedit source code) - bisa diperoleh di http://www.vim.org. Jika tidak terbiasa menggunakan Vim, bisa menggunakan editor teks lainnya (atau IDE), misalnya gedit (ada di GNOME), geany (http://geany.org), KATE (ada di KDE), dan lain-lain.
+
+Software utama untuk keperluan workshop ini yaitu Node.js akan dibahas pada pada bab-bab tersendiri. Materi akan lebih banyak berorientasi ke command line / shell sehingga para pembaca sebaiknya sudah memahami cara-cara
+menggunakan shell di Linux. Anda bisa menggunakan shell apa saja
+(bash, tcsh, zsh, ksh, dan lain-lain).
+
+Have fun!
+
+<<<
+include::bab-01.adoc[]
+
+<<<
+include::bab-02.adoc[]
+
+<<<
+include::bab-03.adoc[]
+
+<<<
+include::bab-04.adoc[]
+
+<<<
+include::bab-05.adoc[]
+
+<<<
+include::bab-06.adoc[]
+
+<<<
+include::bab-07.adoc[]
+
+<<<
+include::bab-08.adoc[]
+
+<<<
+include::bibliography.adoc[]

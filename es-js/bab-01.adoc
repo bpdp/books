@@ -1,0 +1,132 @@
+== ECMAScript, JavaScript, dan Ekosistem JavaScript
+
+Bab ini membahas tentang gambaran umum dunia pemrograman yang melibatkan ECMAScript (selanjutnya kita sebut dengan *ES*) dan JavaScript (selanjutnya kita sebut dengan *JS*)
+
+=== Apa Itu ECMAScript?
+
+ES merupakan spesifikasi dan standar bahasa pemrograman yang
+didefinisikan oleh ECMA.
+
+=== Apa Itu JavaScript?
+
+JS merupakan implementasi dari standar ES. 
+
+
+=== Keterkaitan ECMAScript dan JavaScript
+
+sdfsdf
+
+=== Ekosistem JavaScript
+
+Untuk membuat program menggunakan JS, ada beberapa peranti
+pengembangan yang perlu dipersiapkan terlebih dahulu. 
+
+
+==== Node.js
+
+Node.js menyediakan platform JS dan sampai saat ini menyediakan 2
+kategori platform:
+* LTS (Long-Term Support)
+* Stable
+Berikut adalah hasil download masing-masing versi:
+
+*Versi 6 LTS*
+~~~~
+ls -la
+total 12748
+drwxr-xr-x 1 bpdp users      90 Jan  6 08:50 .
+drwxr-xr-x 1 bpdp users     290 Nov 27 21:42 ..
+-rw------- 1 bpdp users 3699956 Jan  6 08:49 api-doc-6.9.4.pdf
+-rw-r--r-- 1 bpdp users 9348020 Jan  6 03:51 node-v6.9.4-linux-x64.tar.xz
+~~~~
+
+*Versi 7 Stable*
+~~~~
+ls -la
+total 13696
+drwxr-xr-x 1 bpdp users       90 Jan  5 08:49 .
+drwxr-xr-x 1 bpdp users      290 Nov 27 21:42 ..
+-rw------- 1 bpdp users  3701519 Jan  5 08:49 api-doc-7.4.0.pdf
+-rw-r--r-- 1 bpdp users 10318700 Jan  5 00:19 node-v7.4.0-linux-x64.tar.xz
+~~~~
+
+Untuk keperluan pembahasan di buku ini, kita akan menggunakan versi
+stable. Saat buku ini dibuat, versi _stable_ berada pada versi 7.x.x.
+Silahkan download di http://nodejs.org[situs web Node.js]. Setelah itu
+ikuti langkah-langkah berikut:
+* Buat direktori untuk menyimpan semua hasil extraksi distribusi biner
+  Node.js, misalnya _/opt/software/nodejs-dev-tools/nodejs7_.
+  Direktori ini nanti akan menjadi NODEJS_HOME.
+* Buat file teks yang berisi perintah-perintah untuk konfigurasi
+  variabel lingkungan, misal di _$HOME/env/nodejs/nodejs7_ dengan isi
+  sebagai berikut:
+
+~~~~
+NODEJS_HOME=/opt/software/nodejs-dev-tools/nodejs7
+
+export PATH=$HOME/bin:$PATH:$NODEJS_HOME/bin:$NODEJS_HOME/../flow
+export MANPATH=$MANPATH:$NODEJS_HOME/man
+~~~~
+
+Setiap akan menggunakan Node.js, _source_ file tersebut:
+
+~~~~
+$ source ~/env/nodejs/nodejs7
+~~~~
+
+Setelah itu, baru bisa menggunakan Node.js:
+
+~~~~
+$ node -v
+v7.4.0
+~~~~
+
+==== Babel
+
+Babel merupakan compiler kode sumber JS untuk menghasilkan JS.
+Sepintas hal ini terasa membingungkan tetapi jika dikaitkan dengan
+standar ES serta implementasinya di platform JS, peranti ini akan
+mudah dipahami. 
+
+Babel sering juga disebut *transpiler* JS. Fungsi utama dari Babel
+adalah mengikuti standar dari ES dan mentranspilasi kode sumber dari
+spesifikasi ES ke versi ES yang bisa dijalakan oleh platform JS yang
+belum mengikuti standar dan spesifikasi ES. Penggunaannya antara lain
+untuk mentranspilasi (mengubah) kode sumber yang mengikuti spesifikasi
+ES6 dan ES7 menjadi kode sumber yang bisa dieksekusi oleh platform JS
+yang mengikuti spesifikasi sebelum ES6/ES7 (misal: Node.js versi LTS,
+Node.js versi stable, JavaScript shell di Java, Spider Monkey, dan
+lain-lain).
+
+=== Konvensi di Buku Ini
+
+Pada buku ini, semua kode sumber menggunakan standar ES5, ES6, dan
+ES7. Jika suatu pembahasan tidak mempunyai suatu tanda, maka fitur
+tersebut ada pada ES5. Untuk ES6 dan ES7, akan diberikan catatan
+seperti di bawah ini.
+
+[NOTE]
+====
+Fitur ES6
+====
+
+atau
+
+[NOTE]
+====
+Fitur ES7
+====
+
+atau
+
+[NOTE]
+====
+Fitur ES6 dan ES7
+====
+
+Fitur ES6 dan ES7 ada kemungkinan bisa dijalankan menggunakan Node.js
+versi _stable_, jika tidak bisa maka anda harus menggunakan *Babel*
+atau pustaka pihak ketiga.
+
+
+

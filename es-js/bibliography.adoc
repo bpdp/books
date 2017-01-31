@@ -1,0 +1,15 @@
+**Daftar Pustaka**
+[bibliography]
+- [[[mdnjs]]] Anonim. _Mozilla Developer Network - JavaScript_, https://developer.mozilla.org/en-US/docs/JavaScript. 
+- [[[jsenlightenment]]] Cody Lindley. _JavaScript Enlightenment_.
+  http://javascriptenlightenment.com. 2012. 
+- [[[jsdefinitive]]] David Flanagan. _JavaScript: The Definitive
+  Guide_. 4th Edition. O’Reilly. 2001.
+- [[[jumpstartnodejs]]] Don Nguyen. _Jump Start Node.js_. SitePoint. 2012. 
+- [[[jsgoodparts]]] Douglas Crockford. _JavaScript: The Good Parts_.
+  O’Reilly. 2008. 
+- [[[eloquentjs]]] Marijn Haverbeke. _Eloquent JavaScript: A Modern
+  Introduction to Programming_. No Starch Press. 2011. 
+- [[[learningnode]]] Shelley Powers. _Learning Node_. O’Reilly. 2012. 
+- [[[nodeuprunning]]] Tom Hughes-Croucher, Mike Wilson. _Node: Up and
+Running_. O’Reilly. 2012.
