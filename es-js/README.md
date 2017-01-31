@@ -8,11 +8,14 @@ Buku ini ini merupakan buku bebas dengan lisensi
 # Hak Cipta
 
 ![Logo buku](gambar/logo-refactory--small.png)
+
 2017 - Refactory
 
 # Penulis
 
 [Bambang Purnomosidi D. P.](http://bpdp.xyz)
+
 [Twitter](https://twitter.com/bpdp)
+
 [Facebook](https://www.facebook.com/bambangpdp)
 
