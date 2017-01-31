@@ -105,28 +105,16 @@ ES7. Jika suatu pembahasan tidak mempunyai suatu tanda, maka fitur
 tersebut ada pada ES5. Untuk ES6 dan ES7, akan diberikan catatan
 seperti di bawah ini.
 
-[NOTE]
-====
-Fitur ES6
-====
+WARNING: Fitur ES6
 
 atau
 
-[NOTE]
-====
-Fitur ES7
-====
+WARNING: Fitur ES7
 
 atau
 
-[NOTE]
-====
-Fitur ES6 dan ES7
-====
+WARNING: Fitur ES6 dan ES7
 
 Fitur ES6 dan ES7 ada kemungkinan bisa dijalankan menggunakan Node.js
 versi _stable_, jika tidak bisa maka anda harus menggunakan *Babel*
 atau pustaka pihak ketiga.
-
-
-
