@@ -1,4 +1,4 @@
-== Judul Bab 8
+== Struktur Data di JavaScript
 
 === Sub 1
 

@@ -1,5 +1,5 @@
-== Judul bab 6
+== Pemrograman Asynchronius dengan Promise
 
-=== sub bab 6
+=== Apa itu Promise?
 
 sdfsdfs

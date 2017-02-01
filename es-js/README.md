@@ -7,9 +7,23 @@ Buku ini ini merupakan buku bebas dengan lisensi
 
 # Hak Cipta
 
-![Logo buku](gambar/logo-refactory--small.png)
+![Logo buku](gambar/logo-refactory.png)
 
 Hak cipta 2017 - Refactory. Silahkan melihat ke lisensi CC-BY-SA seperti pada penjelasan di atas untuk mengetahui implikasi dari hak cipta terhadap karya ini.
+
+# Build
+
+Buku ini dibuat menggunakan format [asciidoc](http://www.asciidoc.org) dan di-typeset menggunakan *asciidoctor*. Untuk men-typeset ke dalam format pdf, gunakan *asciidoctor-pdf* berikut:
+
+```
+$ gem install asciidoctor, asciidoctor-pdf
+```
+
+Setelah itu, cukup *make*:
+
+```
+$ make
+```
 
 # Penulis
 

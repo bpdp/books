@@ -7,6 +7,7 @@ v1.0, 2017-02
 :source-highlighter: coderay
 
 [abstract]
+image:./gambar/logo-refactory.png[refactory.id]
 image:./gambar/logo-buku.png[Logo buku]
 
 Buku ini ini merupakan buku bebas dengan lisensi
