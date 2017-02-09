@@ -1,5 +1,5 @@
-== Pemrograman Asynchronius dengan Promise
+== Model Pemrograman _Asynchronous_
 
-=== Apa itu Promise?
+=== Pengertian
 
-sdfsdfs
+Model pemrograman _asynchronous_ adalah model pemrograman yang mengantisipasi adanya event-event yang membutuhkan penanganan tersendiri, terlepas dari aliran program. Event yang membutuhkan penanganan tersendiri tersebut biasanya merupakan event yang memerlukan waktu yang cukup lama sebagai hasil pemrosesan. Pada kasus model pemrograman _asynchronous_, aliran program tetap berjalan meskipun event yang memerlukan waktu pemrosesan cukup lama tersebut sedang dikerjakan, sehingga tidak ada proses yang terhenti untuk menunggu event dengan proses yang lama tersebut. Sebagai contoh, aplikasi yang kita bangun suatu saat memerlukan akses I/O (_input/output_) seperti mengambil data dari Internet (RESTful web services, atau endpoint lainnya), mengakses data yang tersimpan dalam basis data, dan lain-lain. Akses tersebut tentu saja memerlukan waktu. Saat alur program sampai pada event I/O tersebut, event I/O tetap dijalankan dan kemudian alur program dikembalikan ke alur utama. Tugas pemrogram untuk mendefinisikan proses yang harus dilakukan setelah event I/O tersebut selesai. Proses untuk menangani event I/O yang sudah selesai tersebut merupakan pembahasan dari bab ini. Dalam literatur, model pemrograman _asynchronous_ ini sering juga disebut _non-blocking_. Kebalikannya adalah _synchronous_ atau _blocking_.
